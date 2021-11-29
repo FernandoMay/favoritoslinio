@@ -7,7 +7,25 @@
 		<key>Favoritos.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DEFE931627554EC400A9FA1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEFE932C27554EC500A9FA1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEFE933627554EC500A9FA1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
