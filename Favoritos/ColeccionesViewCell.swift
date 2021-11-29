@@ -120,15 +120,15 @@ private extension ColeccionesViewCell {
 
 extension ColeccionesViewCell {
     
-    public func configure(products: [Product], name: String, count: Int) {
+    public func configure(products: [String: Product], name: String, count: Int) {
         
-        let url1 = URL(string: products[0].image)
+        let url1 = URL(string: "https://i.linio.com/p/c97a50b1c6c7e3bb2c48c1b4104d5975-product.jpg")
         let data1 = try? Data(contentsOf: url1!)
         imagen1.image = UIImage(data: data1!)
-        let url2 = URL(string: products[1].image)
+        let url2 = URL(string: "https://i.linio.com/p/f1a6240aad2fca51f065da7a39f4f37d-product.jpg")
         let data2 = try? Data(contentsOf: url2!)
         imagen2.image = UIImage(data: data2!)
-        let url3 = URL(string: products[1].image)
+        let url3 = URL(string: "https://i.linio.com/p/8c59451780d21c17cc4ec3c6de0df79c-product.jpg")
         let data3 = try? Data(contentsOf: url3!)
         imagen3.image = UIImage(data: data3!)
         
