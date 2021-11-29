@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Favorito
-struct Favorito: Codable {
+struct Favorito: Decodable {
     let id: Int
     let name, favoritoDescription: String
     let favoritoDefault: Bool
@@ -27,7 +27,7 @@ struct Favorito: Codable {
 }
 
 // MARK: - Owner
-struct Owner: Codable {
+struct Owner: Decodable {
     let name, email, linioID: String
 
     enum CodingKeys: String, CodingKey {
@@ -37,7 +37,7 @@ struct Owner: Codable {
 }
 
 // MARK: - Product
-struct Product: Codable {
+struct Product: Decodable {
     let id: Int
     let name: String
     let wishListPrice: Int

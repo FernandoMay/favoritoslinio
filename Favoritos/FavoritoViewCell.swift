@@ -14,7 +14,7 @@ class FavoritoViewCell: UICollectionViewCell {
     private lazy var textLabel = UILabel()
     private lazy var count = UILabel()
 
-    static let cellId = "CarouselCell"
+    static let cellId = "FavoritoCell"
         
         // MARK: - Initializer
         
@@ -60,7 +60,7 @@ class FavoritoViewCell: UICollectionViewCell {
 //}
 //
 //// MARK: - Public
-//extension CarouselCell {
+//extension FavoritoCell {
 //    public func configure(image: UIImage?, text: String) {
 //        imageView.image = image
 //        textLabel.text = text

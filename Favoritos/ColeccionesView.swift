@@ -46,7 +46,7 @@ class ColeccionesView: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     struct Favoritos: Decodable {
       let count: Int
       let all: [Favorito]
-      
+
       enum CodingKeys: String, CodingKey {
         case count
         case all = "results"
@@ -58,10 +58,12 @@ class ColeccionesView: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         //            self.items = response.value
         //
         //        }
-        AF.request("https://gist.githubusercontent.com/aletomm90/7ff8e9a7c49aefd06a154fe097028d27/raw/c87e2e7d21313391d412420b4254c391aa68eeec/favorites.json").validate()
+        AF.request("https://gist.githubusercontent.com/aletomm90/7ff8e9a7c49aefd06a154fe097028d27/raw/c87e2e7d21313391d412420b4254c391aa68eeec/favorites.json",method: .get).validate()
+            
+    
             .responseDecodable(of: Favoritos.self) { (response) in
-              guard let favoritos = response.value else { return }
-                
+               guard let favoritos = response.value else { return }
+
                 self.items = favoritos.all
                 self.collectionView.reloadData()
 
