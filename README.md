@@ -1,2 +1,2 @@
 # favoritoslinio
-Favoritos Lino
+Favoritos Linio
