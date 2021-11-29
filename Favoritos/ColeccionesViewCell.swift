@@ -82,6 +82,10 @@ private extension ColeccionesViewCell {
         countLabel.font = .systemFont(ofSize: 14)
         
         NSLayoutConstraint.activate([
+            
+            self.topAnchor.constraint(equalTo: self.topAnchor,constant: 10.0),
+            self.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10.0),
+            
             bkgdView.topAnchor.constraint(equalTo: self.topAnchor),
             bkgdView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             bkgdView.trailingAnchor.constraint(equalTo: self.trailingAnchor),

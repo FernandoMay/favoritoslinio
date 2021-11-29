@@ -43,25 +43,44 @@ class ColeccionesView: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         
     }
     
+    struct Favoritos: Decodable {
+      let count: Int
+      let all: [Favorito]
+      
+      enum CodingKeys: String, CodingKey {
+        case count
+        case all = "results"
+      }
+    }
+    
     func fetchData(){
         //        AF.request("https://gist.githubusercontent.com/aletomm90/7ff8e9a7c49aefd06a154fe097028d27/raw/c87e2e7d21313391d412420b4254c391aa68eeec/favorites.json").response { response in
         //            self.items = response.value
         //
         //        }
-        AF.request("https://gist.githubusercontent.com/aletomm90/7ff8e9a7c49aefd06a154fe097028d27/raw/c87e2e7d21313391d412420b4254c391aa68eeec/favorites.json")
-            .validate()
-            .responseDecodable(of: Favorito.self) { (response) in
-                guard let fav = response.value else { return }
-                debugPrint(fav)
-                self.items.append(fav)
+        AF.request("https://gist.githubusercontent.com/aletomm90/7ff8e9a7c49aefd06a154fe097028d27/raw/c87e2e7d21313391d412420b4254c391aa68eeec/favorites.json").validate()
+            .responseDecodable(of: Favoritos.self) { (response) in
+              guard let favoritos = response.value else { return }
+                
+                self.items = favoritos.all
                 self.collectionView.reloadData()
+
             }
+
+//        AF.request("https://gist.githubusercontent.com/aletomm90/7ff8e9a7c49aefd06a154fe097028d27/raw/c87e2e7d21313391d412420b4254c391aa68eeec/favorites.json")
+//            .validate()
+//            .responseDecodable(of: Favorito.self) { (response) in
+//                guard let fav = response.value else { return }
+//                debugPrint(fav)
+//                self.items.append(fav)
+//                self.collectionView.reloadData()
+//            }
         
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfSections section: Int) -> Int {
-        return items.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,9 +95,9 @@ class ColeccionesView: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         return cell
     }
     
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //        return CGSize(width: self.collectionView.frame.size.width, height: 200)
-    //    }
+//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//            return CGSize(width: self.collectionView.frame.size.width, height: 200)
+//        }
 }
 
 
